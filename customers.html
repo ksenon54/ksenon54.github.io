@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Customers</title>
   <link href="site.css" rel="stylesheet">
 </head>
+
 <body>
 
 <nav id="nav01"></nav>
@@ -18,7 +20,7 @@
 
 <script>
 var xmlhttp = new XMLHttpRequest();
-var url = "http://www.w3schools.com/website/customers.php";
+var url = "http://www.w3schools.com/website/customers_db_sql.aspx";
 
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -33,7 +35,6 @@ function myFunction(response) {
     var arr = obj.records;
     var i;
     var out = "<table><tr><th>Name</th><th>City</th><th>Country</th></tr>";
-
     for(i = 0; i < arr.length; i++) {
         out += "<tr><td>" + 
         arr[i].Name +
@@ -43,7 +44,6 @@ function myFunction(response) {
         arr[i].Country +
         "</td></tr>";
     }
-
     out += "</table>"
     document.getElementById("id01").innerHTML = out;
 }
